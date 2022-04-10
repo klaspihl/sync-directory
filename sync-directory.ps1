@@ -39,6 +39,8 @@
 .OUTPUTS
     Logs to Eventlog, files and console
 .NOTES
+
+    If source path is empty or wrong target all files in destiantion is moved to the 'extra files' directory.
     Requires to be run as administrator for robocopys 'audit' function to work on getting extra files.
     2021-02-08 Version 0.9 Proof of concept with major bug.
     2022-04-10 Version 1.0 Working backup of files.
@@ -168,7 +170,11 @@ if ($PurgeAge -lt 1) {
     Write-Warning "Age of file before permanently removed from archive $DestinationExtraFiles is set to $PurgeAge"
     Pause
 }
-
+if(-not (Test-Path $Path)) {
+    Write-Log -Type Error -Text "Can not validate source path '$path'"
+    Write-Error "Can not validate source path '$path', exit"
+    exit 1
+}
 test-Directory -Path ([ref]$LoggingPath) -Compress
 test-Directory -Path ([ref]$Destination)
 test-Directory -Path ([ref]$DestinationExtraFiles)

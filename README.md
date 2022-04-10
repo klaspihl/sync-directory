@@ -37,7 +37,7 @@ Uses robocopy
 ## Synopsis
 ```powershell
 
-.SYNOPSIS
+..SYNOPSIS
     Sync directories and put extra/old files in other folder structure.
     Extra files older then x days is purged from the "extra" folder.
 
@@ -57,7 +57,7 @@ Uses robocopy
 
 .EXAMPLE
     Sync documents on fileserver to External disk D:
-    .\sync-directory.ps1 -Path \\pihl-fs\Pihl\ -Destination D:\Backup\Manual\ -DestinationExtraFiles D:\Backup\BackupPihl-ExtraFiles\ -Verbose
+    .\sync-directory.ps1 -Path \\pihl-fs\Pihl\ -Destination D:\Backup\Documents\ -DestinationExtraFiles D:\Backup\BackupPihl-ExtraFiles\ -Verbose
 
 .PARAMETER Path
     Source directory
@@ -77,6 +77,8 @@ Uses robocopy
 .OUTPUTS
     Logs to Eventlog, files and console
 .NOTES
+
+    If source path is empty or wrong target all files in destiantion is moved to the 'extra files' directory.
     Requires to be run as administrator for robocopys 'audit' function to work on getting extra files.
     2021-02-08 Version 0.9 Proof of concept with major bug.
     2022-04-10 Version 1.0 Working backup of files.
