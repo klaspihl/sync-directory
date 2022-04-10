@@ -37,7 +37,7 @@ Uses robocopy
 ## Synopsis
 ```powershell
 
-..SYNOPSIS
+.SYNOPSIS
     Sync directories and put extra/old files in other folder structure.
     Extra files older then x days is purged from the "extra" folder.
 
