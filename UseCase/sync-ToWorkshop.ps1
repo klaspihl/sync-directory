@@ -4,7 +4,7 @@
 
     Download latest version from Github and run as administrator with predefined variables
 .EXAMPLE
-    . sync-ToWorkshow.ps1
+    . sync-ToWorkshop.ps1
 
 #>
 param (
