@@ -10,7 +10,7 @@
 param (
     $Path='\\pihl-fs\Pihl\',
     $DestinationPath='D:\Backup\Pihl\',
-    $DestinationExtraFiles='D:\BackupPihl-ExtraFiles\',
+    $DestinationExtraFiles='D:\Backup\BackupPihl-ExtraFiles\',
     $uriBackup = 'https://raw.githubusercontent.com/KlasPihl/sync-directory/main/sync-directory.ps1'
 )
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
