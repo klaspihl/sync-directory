@@ -23,4 +23,4 @@ $file = New-TemporaryFile
 $script = $file | Rename-Item -NewName ("{0}.ps1" -f $file.basename) -PassThru
 Invoke-WebRequest -Uri  $uriBackup -OutFile $script
 
-. $script -Path $Path -Destination $Destination -DestinationExtraFiles $DestinationExtraFiles
+. $script -Path $Path -Destination $DestinationPath -DestinationExtraFiles $DestinationExtraFiles
